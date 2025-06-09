@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@azure/storage-blob": "^12.27.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "multer": "^2.0.0"
+  },
+  "type": "module",
+  "eslintConfig": {
+    "extends": "standard",
+    "env": {
+      "browser": true,
+      "node": true,
+      "es2021": true
+    }
+  },
+  "scripts": {
+    "start": "node --watch backend/server.js"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  }
+}

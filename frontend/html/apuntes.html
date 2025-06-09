@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Polinotas</title>
+  <link rel="stylesheet" href="/frontend/css/stylesApuntes.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+      <img src="img/logoblanco.png" alt="Polinotas" />
+    </div>
+    <nav>
+      <a href="/frontend/html/inicio.html">Inicio</a>
+      <a href="/frontend/html/profile.html">Perfil</a>
+      <a href="/frontend/html/apuntes.html">Apuntes</a>
+    
+    </nav>
+    <div class="search-btn">
+    <input type="text" id="buscador" placeholder="Buscar apuntes..." />
+    <button><i class="fas fa-search"></i></button>
+  </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Accede, comparte y consulta apuntes de cualquier materia en un solo lugar.</h1>
+      </div>
+      <div class="hero-image">
+        <img src="/frontend/img/banner.jpeg" alt="Estudiante Poli"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE BÚSQUEDA DE MATERIAS -->
+  <section class="busqueda">
+    <h2>¿Cuál materia estás buscando?</h2>
+    <input type="text" id="search-input" placeholder="Escribe el nombre de la materia..." disabled />
+  </section>
+
+  <!-- GRID DE MATERIAS -->
+
+  <main class="materias-grid" id="materias-grid">
+    <div class="materia-card" >
+      <a href="/frontend/html/algoritmos1.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Algoritmos 1</h3>
+      </a>
+    </div>
+    <div class="materia-card">
+      <a href="/frontend/html/algebra.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Álgebra Lineal</h3>
+      </a>
+    </div>
+    <div class="materia-card">
+       <a href="/frontend/html/bases-datos.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Base de datos</h3>
+      </a>
+    </div>
+    <div class="materia-card">
+      <a href="/frontend/html/algoritmos1.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Algoritmos 2</h3>
+      </a>
+    </div>
+    <div class="materia-card">
+      <a href="/frontend/html/algebra.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Álgebra Lineal</h3>
+      </a>
+    </div>
+    <div class="materia-card">
+      <a href="/frontend/html/bases-datos.html" class="materia-card">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Base de datos 2</h3>
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>Polinotas</h3>
+      <p>2025 Todos los derechos reservados©</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Inicio</a>
+      <a href="#">Apuntes</a>
+      <a href="#">Categorías</a>
+    </div>
+  </footer>
+
+
+  
+  <script>
+  // Seleccionar el input y los elementos a filtrar
+  const buscador = document.getElementById('buscador');
+  const tarjetas = document.querySelectorAll('.materia-card');
+
+  buscador.addEventListener('input', function () {
+    const texto = buscador.value.toLowerCase();
+
+    tarjetas.forEach(card => {
+      const materia = card.textContent.toLowerCase();
+      if (materia.includes(texto)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+   <script src="/frontend/js/main.js"></script>
+</body>
+</html>

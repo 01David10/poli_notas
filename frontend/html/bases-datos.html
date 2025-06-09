@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Base de datos 1 · Polinotas</title>
+  <link rel="stylesheet" href="/frontend/css/stylesApuntes.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER (igual que en index.html) -->
+  <header>
+    <div class="logo"><a href="index.html">
+      <img src="img/logoblanco.png" alt="Polinotas" /></div>
+    <nav>
+      <a href="/frontend/html/inicio.html">Inicio</a>
+      <a href="/frontend/html/profile.html">Perfil</a>
+      <a href="/frontend/html/apuntes.html">Apuntes</a>
+      
+    </nav>
+    <div class="search-btn">
+    <input type="text" id="buscador" placeholder="Buscar apuntes..." />
+    <button><i class="fas fa-search"></i></button>
+  </div>
+  </header>
+
+  <!-- TÍTULO DE LA PÁGINA -->
+  <section class="page-title">
+    <h2>Base de datos 1</h2>
+  </section>
+
+  <!-- GRID DE APUNTES -->
+  <main class="apuntes-grid">
+    <!-- Repetir este bloque por cada apunte -->
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Base de datos no relacionales</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Modelos de datos NoSQL</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Lenguajes de consulta</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+    <!-- segunda fila -->
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Base de datos no relacionales</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Modelos de datos NoSQL</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+    <div class="apunte-card">
+      <i class="fas fa-folder-open fa-3x"></i>
+      <h3>Lenguajes de consulta</h3>
+      <p class="autor">Pepito_perez000@poli.edu.co</p>
+    </div>
+  </main>
+
+  <!-- FOOTER (igual que en index.html) -->
+  <footer>
+    <div class="footer-left">
+      <h3>Polinotas</h3>
+      <p>2025 Todos los derechos reservados©</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Inicio</a>
+      <a href="#">Apuntes</a>
+      <a href="#">Categorías</a>
+    </div>
+  </footer>
+ <script src="/frontend/js/main.js"></script>
+</body>
+</html>
