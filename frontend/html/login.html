@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <title>Poli Notas | Login</title>
-    <link rel="stylesheet" href="../css/reset-password.css" />
+    <link rel="stylesheet" href="/css/reset-password.css" />
+
+    
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -73,15 +75,21 @@
   </p>
 </div>
 
-      <div id="modal" style="display:none; position:fixed; background:#fff; border:1px solid #ccc; padding:20px; top:30%; left:30%; z-index:1000;">
-      <h3 class="text-lg font-semibold mb-4">Reset Password</h3>
-      <input type="email" id="email" placeholder="Email" class="block mb-2 w-full p-2 border" />
-      <input type="text" id="dni" placeholder="DNI" class="block mb-2 w-full p-2 border" />
-      <input type="password" id="nuevaContra" placeholder="New Password" class="block mb-4 w-full p-2 border" />
-      <button onclick="verificarYModificar()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
-      <button onclick="cerrarModal()" class="ml-2 bg-gray-300 px-4 py-2 rounded">Cancel</button>
-      <p id="mensaje" class="mt-2 text-sm"></p>
-      </div>
+
+      <div id="modal" class="modal">
+  <div class="modal-content">
+    <h3 class="modal-title">Reset Password</h3>
+    <input type="email" id="email" placeholder="Email" class="modal-input" />
+    <input type="text" id="dni" placeholder="DNI" class="modal-input" />
+    <input type="password" id="nuevaContra" placeholder="New Password" class="modal-input" />
+    <div class="modal-buttons">
+      <button onclick="verificarYModificar()" class="modal-button primary">Submit</button>
+      <button onclick="cerrarModal()" class="modal-button secondary">Cancel</button>
+    </div>
+    <p id="mensaje" class="modal-message"></p>
+  </div>
+</div>
+
 
     </main>
     <!-- Bootstrap JavaScript Libraries -->
