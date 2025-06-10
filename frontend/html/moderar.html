@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moderación de Apuntes</title>
   <link rel="stylesheet" href="/frontend/css/stylesApuntes.css" />
 </head>
+
 <body>
 
   <header>
-    <div class="logo">Polinotas</div>
+    <img src="../img/logoblanco.png" alt="Logo" class="logo" />
     <nav>
       <a href="index.html">Inicio</a>
       <a href="apuntes.html">Apuntes</a>
       <a href="#">Moderar</a>
     </nav>
+    <div>
+      <!-- logout -->
+      <button class="btn btn-danger" id="logoutButton">Cerrar sesión</button>
+    </div>
   </header>
 
   <section class="page-title">
@@ -33,5 +39,7 @@
   </footer>
 
   <script src="js/moderar.js"></script>
+  <script src="../js/logout.js"></script>
 </body>
+
 </html>

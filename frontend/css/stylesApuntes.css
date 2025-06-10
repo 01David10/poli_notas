@@ -846,6 +846,15 @@ footer {
   text-decoration: underline;
 }
 
+#logoutButton {
+  background-color: var(--verde-principal);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 
 /* --------------------
