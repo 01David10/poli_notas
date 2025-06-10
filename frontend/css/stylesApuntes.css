@@ -799,6 +799,53 @@ footer {
   cursor: pointer;
 }
 
+#notas-section {
+  max-width: 800px;
+  margin: 40px auto; /* Centrada y separada del footer */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#notas-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #2d3e50;
+}
+
+#notas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+#notas-table th,
+#notas-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+#notas-table th {
+  background-color: #1f4e3d;
+  color: #ffffff;
+}
+
+#notas-table tr:hover {
+  background-color: #f4f4f4;
+}
+
+#notas-table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#notas-table a:hover {
+  text-decoration: underline;
+}
+
 
 
 /* --------------------

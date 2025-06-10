@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Polinotas</title>
-  <link rel="stylesheet" href="/frontend/css/stylesApuntes.css" />
+<link rel="stylesheet" href="/css/stylesApuntes.css" />
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -34,7 +34,7 @@
         <h1>Accede, comparte y consulta apuntes de cualquier materia en un solo lugar.</h1>
       </div>
       <div class="hero-image">
-        <img src="/frontend/img/banner.jpeg" alt="Estudiante Poli"/>
+        <img src="/img/banner.jpeg" alt="Estudiante Poli"/>
       </div>
     </div>
   </section>
@@ -48,43 +48,37 @@
   <!-- GRID DE MATERIAS -->
 
   <main class="materias-grid" id="materias-grid">
-    <div class="materia-card" >
-      <a href="/frontend/html/algoritmos1.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Algoritmos 1</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/algebra.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Álgebra Lineal</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-       <a href="/frontend/html/bases-datos.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Base de datos</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/algoritmos1.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Algoritmos 2</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/algebra.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Álgebra Lineal</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/bases-datos.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Base de datos 2</h3>
-      </a>
-    </div>
-  </main>
+  <div class="materia-card" data-subject="Algoritmos 1">
+    <i class="fas fa-folder fa-3x"></i>
+    <h3>Algoritmos 1</h3>
+  </div>
+  <div class="materia-card" data-subject="Álgebra Lineal">
+    <i class="fas fa-folder fa-3x"></i>
+    <h3>Álgebra Lineal</h3>
+  </div>
+  <div class="materia-card" data-subject="Base de datos">
+    <i class="fas fa-folder fa-3x"></i>
+    <h3>Bases de datos</h3>
+  </div>
+  <!-- Añade más materias igual -->
+</main>
+
+<!-- Aquí se mostrará la tabla -->
+<section id="notas-section" style="display: none;">
+  <h2>Apuntes disponibles</h2>
+  <table border="1" id="notas-table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Subido por</th>
+        <th>Fecha</th>
+        <th>Enlace</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -120,6 +114,6 @@
   });
 </script>
 
-   <script src="/frontend/js/main.js"></script>
+   <script src="/js/main.js"></script>
 </body>
 </html>
