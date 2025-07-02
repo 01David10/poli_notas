@@ -13,8 +13,8 @@ async function fetchProfile (profile) {
   const name = document.getElementById('name')
   const email = document.getElementById('email')
   try {
-    name.value = profile.user.userFound.name
-    email.value = profile.user.userFound.email
+    name.value = profile.user.name
+    email.value = profile.user.email
   } catch (error) {
     console.error('Error updating profile:', error)
   }
@@ -158,10 +158,10 @@ async function fetchUser () {
   const dniInput = document.getElementById('edit-document')
 
   try {
-    name.value = profile.user.userFound.name
-    email.value = profile.user.userFound.email
-    role.value = profile.user.userFound.role
-    dniInput.value = profile.user.userFound.dni
+    name.value = profile.user.name
+    email.value = profile.user.email
+    role.value = profile.user.role
+    dniInput.value = profile.user.dni
   } catch (error) {
     console.error('Error updating profile:', error)
   }
@@ -190,7 +190,7 @@ function getNewInputValues () {
 
 async function updateProfile () {
   const profile = await getLoggedUser()
-  const dni = profile.user.userFound.dni
+  const dni = profile.user.dni
 
   try {
     const user = getNewInputValues()

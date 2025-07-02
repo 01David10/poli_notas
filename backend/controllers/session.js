@@ -19,7 +19,13 @@ const login = async (req, res) => {
       return res.status(400).json({ message: 'Incorrect password' })
     } else {
       // creacion del token
-      const token = await createAccessToken({ userFound })
+      const token = await createAccessToken({
+        _id: userFound._id,
+        dni: userFound.dni,
+        name: userFound.name,
+        email: userFound.email,
+        role: userFound.role
+      })
       // guardar token en la cookie
       res.cookie('token', token, {
         httpOnly: true
@@ -52,7 +58,13 @@ const register = async (req, res) => {
     const userSaved = await newUser.save()
 
     // creacion del Token
-    const token = await createAccessToken({ userSaved })
+    const token = await createAccessToken({
+      _id: userSaved._id,
+      dni: userSaved.dni,
+      name: userSaved.name,
+      email: userSaved.email,
+      role: userSaved.role
+    })
     // guardar el token en la cookie
     res.cookie('token', token, {
       httpOnly: true
