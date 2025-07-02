@@ -34,12 +34,12 @@ const uploadFile = async (req, res) => {
       return res.status(401).json({ error: 'Invalid token' })
     }
 
-    if (!user || !user.userFound._id) {
+    if (!user || !user._id) {
       return res.status(400).json({ error: 'Invalid user data in token' })
     }
 
     const newNote = new NoteModel({
-      userId: user.userFound._id,
+      userId: user._id,
       title: req.body.title,
       URL: fileUrl,
       subject: req.body.subject
@@ -70,11 +70,11 @@ const getUserNotes = async (req, res) => {
       return res.status(401).json({ error: 'Invalid token' })
     }
 
-    if (!user || !user.userFound || !user.userFound._id) {
+    if (!user || !user || !user._id) {
       return res.status(400).json({ error: 'Invalid user data in token' })
     }
 
-    const notes = await NoteModel.find({ userId: user.userFound._id })
+    const notes = await NoteModel.find({ userId: user._id })
 
     res.status(200).json(notes)
   } catch (error) {
