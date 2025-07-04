@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 document.addEventListener('DOMContentLoaded', async () => {
-  const profile = await getLoggedUser()
+  dni = await getLoggedUser()
+  const profile = await getUserByDni(dni)
 
   if (profile) {
     await fetchProfile(profile)
@@ -13,8 +14,8 @@ async function fetchProfile (profile) {
   const name = document.getElementById('name')
   const email = document.getElementById('email')
   try {
-    name.value = profile.user.name
-    email.value = profile.user.email
+    name.value = profile.name
+    email.value = profile.email
   } catch (error) {
     console.error('Error updating profile:', error)
   }
@@ -36,9 +37,33 @@ async function getLoggedUser () {
     }
 
     const data = await response.json()
-    return data
+    return data.user.dni
   } catch (error) {
     console.error('Error fetching user:', error)
+  }
+}
+
+async function getUserByDni (dni) {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/users/getUserById/${dni}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      }
+    )
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error fetching user by DNI:', error)
   }
 }
 
@@ -150,7 +175,8 @@ btnUpdate.addEventListener('click', async () => {
 })
 
 async function fetchUser () {
-  const profile = await getLoggedUser()
+  dni = await getLoggedUser()
+  const profile = await getUserByDni(dni)
 
   const name = document.getElementById('edit-name')
   const email = document.getElementById('edit-email')
@@ -158,10 +184,10 @@ async function fetchUser () {
   const dniInput = document.getElementById('edit-document')
 
   try {
-    name.value = profile.user.name
-    email.value = profile.user.email
-    role.value = profile.user.role
-    dniInput.value = profile.user.dni
+    name.value = profile.name
+    email.value = profile.email
+    role.value = profile.role
+    dniInput.value = profile.dni
   } catch (error) {
     console.error('Error updating profile:', error)
   }
@@ -189,8 +215,7 @@ function getNewInputValues () {
 }
 
 async function updateProfile () {
-  const profile = await getLoggedUser()
-  const dni = profile.user.dni
+  dni = await getLoggedUser()
 
   try {
     const user = getNewInputValues()
@@ -218,6 +243,7 @@ async function updateProfile () {
       // update profile inputs
       document.getElementById('name').value = updatedName
       document.getElementById('email').value = updatedEmail
+      document.getElementById('edit-name').value = updatedName
 
       Swal.fire({
         icon: 'success',
