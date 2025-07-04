@@ -214,11 +214,8 @@ function getNewInputValues () {
   return user
 }
 
-async function updateProfile () {
-  dni = await getLoggedUser()
-
+async function udpateUser (dni, user) {
   try {
-    const user = getNewInputValues()
     const response = await fetch(
       `http://localhost:3000/users/updateUser/${dni}`,
       {
@@ -231,7 +228,24 @@ async function updateProfile () {
       }
     )
 
-    if (response.ok) {
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error updating user:', error)
+  }
+}
+
+async function updateProfile () {
+  try {
+    dni = await getLoggedUser()
+    const user = getNewInputValues()
+    const userUdpate = await udpateUser(dni, user)
+
+    if (userUdpate) {
       // close modal
       const modalElement = document.getElementById('editUserModal')
       const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement)
