@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polinotas</title>
+  <link rel="stylesheet" href="/css/stylesApuntes.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logoblanco.png" alt="Polinotas" />
+    </div>
+    <nav>
+      <a href="/index">Inicio</a>
+      <a href="/profile">Perfil</a>
+      <a href="/apuntes">Apuntes</a>
+
+    </nav>
+    <div>
+      <!-- logout -->
+      <button class="btn btn-danger" id="logoutButton">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Accede, comparte y consulta apuntes de cualquier materia en un solo lugar.</h1>
+      </div>
+      <div class="hero-image">
+        <img src="/img/banner.jpeg" alt="Estudiante Poli" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID DE MATERIAS -->
+
+  <main class="materias-grid" id="materias-grid">
+    <div class="materia-card" data-subject="Algoritmos 1">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Algoritmos 1</h3>
+    </div>
+    <div class="materia-card" data-subject="Algebra lineal">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Álgebra Lineal</h3>
+    </div>
+    <div class="materia-card" data-subject="Bases de datos">
+      <i class="fas fa-folder fa-3x"></i>
+      <h3>Bases de datos</h3>
+    </div>
+
+    <!-- Añade más materias igual -->
+  </main>
+
+  <!-- Aquí se mostrará la tabla -->
+  <section id="notas-section" style="display: none;">
+    <h2>Apuntes disponibles</h2>
+    <table id="notas-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Subido por</th>
+          <th>Fecha</th>
+          <th>Enlace</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>Polinotas</h3>
+      <p>2025 Todos los derechos reservados©</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Inicio</a>
+      <a href="#">Apuntes</a>
+      <a href="#">Categorías</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/logout.js"></script>
+</body>
+
+</html>

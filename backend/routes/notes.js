@@ -1,7 +1,7 @@
 import express from 'express'
 import multer from 'multer'
 import { uploadFile, getUserNotes } from '../controllers/notes.js'
-import { getNotesBySubject } from '../controllers/dowloadnotes'
+import { getNotesBySubject } from '../controllers/dowloadnotes.js'
 
 const router = express.Router()
 
