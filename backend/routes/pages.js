@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getLoginPage, getIndexPage, getProfilePage, getRegisterPage, getApuntesPage } from '../controllers/pages.js'
+import { getLoginPage, getIndexPage, getProfilePage, getRegisterPage, getApuntesPage, getAdminPage } from '../controllers/pages.js'
 import { authRequired } from '../jwt.js'
 
 const router = Router()
@@ -9,5 +9,6 @@ router.get('/register', getRegisterPage)
 router.get('/index', authRequired, getIndexPage)
 router.get('/profile', authRequired, getProfilePage)
 router.get('/apuntes', getApuntesPage)
+router.get('/admin', authRequired, getAdminPage)
 
 export default router

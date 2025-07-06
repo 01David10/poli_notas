@@ -24,4 +24,8 @@ function getApuntesPage (req, res) {
   res.sendFile(path.join(__dirname, '../../frontend/html/apuntes.html'))
 }
 
-export { getLoginPage, getIndexPage, getProfilePage, getRegisterPage, getApuntesPage }
+function getAdminPage (req, res) {
+  res.sendFile(path.join(__dirname, '../../frontend/html/admin.html'))
+}
+
+export { getLoginPage, getIndexPage, getProfilePage, getRegisterPage, getApuntesPage, getAdminPage }
