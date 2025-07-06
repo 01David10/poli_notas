@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Polinotas</title>
-  <link rel="stylesheet" href="/frontend/css/stylesApuntes.css" />
+  <title>Polinotas | Notes</title>
+  <link rel="stylesheet" href="../css/stylesApuntes.css" />
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -13,13 +13,12 @@
   <header>
     <div class="logo">
       <a href="index.html">
-      <img src="img/logoblanco.png" alt="Polinotas" />
+      <img src="../img/logoblanco.png" alt="Polinotas" />
     </div>
     <nav>
-      <a href="/frontend/html/inicio.html">Inicio</a>
-      <a href="/frontend/html/profile.html">Perfil</a>
-      <a href="/frontend/html/apuntes.html">Apuntes</a>
-    
+      <a href="/index">Inicio</a>
+      <a href="/profile">Perfil</a>
+      <a href="/apuntes">Apuntes</a>
     </nav>
     <div class="search-btn">
     <input type="text" id="buscador" placeholder="Buscar apuntes..." />
@@ -34,19 +33,12 @@
         <h1>Accede, comparte y consulta apuntes de cualquier materia en un solo lugar.</h1>
       </div>
       <div class="hero-image">
-        <img src="/frontend/img/banner.jpeg" alt="Estudiante Poli"/>
+        <img src="../img/banner.jpeg" alt="Estudiante Poli"/>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN DE BÚSQUEDA DE MATERIAS -->
-  <section class="busqueda">
-    <h2>¿Cuál materia estás buscando?</h2>
-    <input type="text" id="search-input" placeholder="Escribe el nombre de la materia..." disabled />
-  </section>
-
   <!-- GRID DE MATERIAS -->
-
   <main class="materias-grid" id="materias-grid">
     <div class="materia-card" >
       <a href="/frontend/html/algoritmos1.html" class="materia-card">
@@ -66,24 +58,6 @@
       <h3>Base de datos</h3>
       </a>
     </div>
-    <div class="materia-card">
-      <a href="/frontend/html/algoritmos1.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Algoritmos 2</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/algebra.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Álgebra Lineal</h3>
-      </a>
-    </div>
-    <div class="materia-card">
-      <a href="/frontend/html/bases-datos.html" class="materia-card">
-      <i class="fas fa-folder fa-3x"></i>
-      <h3>Base de datos 2</h3>
-      </a>
-    </div>
   </main>
 
   <!-- FOOTER -->
@@ -98,8 +72,6 @@
       <a href="#">Categorías</a>
     </div>
   </footer>
-
-
   
   <script>
   // Seleccionar el input y los elementos a filtrar
@@ -118,8 +90,8 @@
       }
     });
   });
-</script>
+  </script>
 
-   <script src="/frontend/js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

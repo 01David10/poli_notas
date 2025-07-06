@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (profile) {
     await fetchProfile(profile)
   } else {
-    Swal.fire('User not found', 'Please check the user ID', 'error')
+    errorAlert('Profile not found. Please check your username.')
   }
 })
 
@@ -96,18 +96,9 @@ async function uploadFile () {
     console.log(result)
 
     if (response.ok) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'File uploaded successfully! URL:' + result.url,
-        confirmButtonText: 'OK'
-      })
+      successAlert('File uploaded successfully!')
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: result.error || 'There was an error uploading the file.'
-      })
+      errorAlert('Failed to upload file. Please try again.')
     }
   } catch (error) {
     console.error('Error uploading file:', error)
@@ -248,30 +239,49 @@ async function updateProfile () {
     if (userUdpate) {
       // close modal
       const modalElement = document.getElementById('editUserModal')
-      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement)
-      modalInstance.hide()
+      await closeModal(modalElement)
 
       const updatedName = document.getElementById('edit-name').value
       const updatedEmail = document.getElementById('edit-email').value
+      const updatedRole = document.getElementById('edit-role').value
+      const updatedDocument = document.getElementById('edit-document').value
 
       // update profile inputs
       document.getElementById('name').value = updatedName
       document.getElementById('email').value = updatedEmail
       document.getElementById('edit-name').value = updatedName
+      document.getElementById('edit-email').value = updatedEmail
+      document.getElementById('edit-role').value = updatedRole
+      document.getElementById('edit-document').value = updatedDocument
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Perfil actualizado con éxito',
-        confirmButtonText: 'OK'
-      })
+      successAlert('Profile updated successfully!')
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error al actualizar perfil',
-        text: 'Por favor, intenta de nuevo.'
-      })
+      errorAlert('Failed to update profile. Please try again')
     }
   } catch (error) {
     console.error('Error updating profile:', error)
   }
+}
+
+async function closeModal (modal) {
+  const modalInstance = bootstrap.Modal.getOrCreateInstance(modal)
+  modalInstance.hide()
+}
+
+async function successAlert (message) {
+  Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: message || 'Operation completed successfully.',
+    confirmButtonText: 'OK'
+  })
+}
+
+async function errorAlert (message) {
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: message || 'There was an error processing your request.',
+    confirmButtonText: 'OK'
+  })
 }

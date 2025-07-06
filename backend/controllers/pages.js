@@ -20,4 +20,8 @@ function getRegisterPage (req, res) {
   res.sendFile(path.join(__dirname, '../../frontend/html/register.html'))
 }
 
-export { getLoginPage, getIndexPage, getProfilePage, getRegisterPage }
+function getNotesPage (req, res) {
+  res.sendFile(path.join(__dirname, '../../frontend/html/notes.html'))
+}
+
+export { getLoginPage, getIndexPage, getProfilePage, getRegisterPage, getNotesPage }
