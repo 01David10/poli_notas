@@ -1,45 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polinotas | admin</title>
+    <link rel="shortcut icon" href="/img/logoblanco.png" type="image/png" />
+    <link rel="stylesheet" href="../css/stylesApuntes.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polinotas | admin</title>
-  <link rel="stylesheet" href="../css/stylesApuntes.css" />
-</head>
+  <body>
+    <header>
+      <img src="../img/logoblanco.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="/index">Inicio</a>
+        <a href="/profile">Perfil</a>
+        <a href="/apuntes">Apuntes</a>
+        <a href="/admin">Admin</a>
+      </nav>
+      <div>
+        <!-- logout -->
+        <button class="btn btn-danger" id="logoutButton">Cerrar sesión</button>
+      </div>
+    </header>
 
-<body>
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Gestión de Usuarios</h1>
+        <button class="btn btn-primary" id="addUserBtn">
+          <i class="fas fa-plus"></i> Agregar Usuario
+        </button>
+      </div>
 
-  <header>
-    <img src="../img/logoblanco.png" alt="Logo" class="logo" />
-    <nav>
-      <a href="/index">Inicio</a>
-      <a href="/profile">Perfil</a>
-      <a href="/apuntes">Apuntes</a>
-      <a href="/admin">Admin</a>
-    </nav>
-    <div>
-      <!-- logout -->
-      <button class="btn btn-danger" id="logoutButton">Cerrar sesión</button>
+      <div id="messageContainer"></div>
+
+      <div class="users-table">
+        <div class="table-header">Lista de Usuarios</div>
+        <div class="table-container">
+          <table id="usersTable" style="display: none">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>DNI</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody"></tbody>
+          </table>
+          <div id="emptyState" class="empty-state" style="display: none">
+            <h3>No hay usuarios registrados</h3>
+            <p>Agrega el primer usuario para comenzar</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <section class="page-title">
-    <h2>Welcome dear admin</h2>
-  </section>
-
-  <main class="apuntes-grid" id="moderacion-container">
-    <!-- Aquí se cargan los apuntes dinámicamente -->
-  </main>
-
-  <footer>
-    <div class="footer-left">
-      <h3>Polinotas</h3>
-      <p>&copy; 2025</p>
+    <!-- Modal para agregar/editar usuario -->
+    <div id="userModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modalTitle">Agregar Usuario</h2>
+          <span class="close" id="closeModal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="userForm">
+            <div class="form-group">
+              <label for="userName">Nombre:</label>
+              <input type="text" id="userName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="userDni">DNI:</label>
+              <input type="text" id="userDni" name="dni" required />
+            </div>
+            <div class="form-group">
+              <label for="userEmail">Email:</label>
+              <input type="email" id="userEmail" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="userPassword">Contraseña:</label>
+              <input
+                type="password"
+                id="userPassword"
+                name="password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="userRole">Rol:</label>
+              <select id="userRole" name="role" required>
+                <option value="">Seleccionar rol</option>
+                <option value="student">Estudiante</option>
+                <option value="teacher">Profesor</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="btn btn-success"
+            id="saveBtn"
+            form="userForm"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <script src="../js/logout.js"></script>
-</body>
+    <footer>
+      <div class="footer-left">
+        <h3>Polinotas</h3>
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
 
+    <script src="../js/logout.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
 </html>
