@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Global variables
 let users = []
 let currentUser = null

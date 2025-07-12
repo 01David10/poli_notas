@@ -35,4 +35,11 @@ const authRequired = (req, res, next) => {
   })
 }
 
-export { createAccessToken, authRequired }
+const authForAdmin = (req, res, next) => {
+  if (req.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Access denied, admin only' })
+  }
+  next()
+}
+
+export { createAccessToken, authRequired, authForAdmin }
